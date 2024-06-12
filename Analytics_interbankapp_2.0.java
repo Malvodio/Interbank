@@ -79,3 +79,19 @@ Identity.syncIdentifier("digital_id",
                         digital_id,// Exmaple: 01-34234...234
                         VisitorID.AuthenticationState.AUTHENTICATED);
 
+Android:
+
+String coddoc_enc = digitalid.split("-")[1]; // tomamos solo el documento encriptado del digital id
+IdentityItem coddoc = new IdentityItem(coddoc_enc); 
+IdentityItem codunicocli = new IdentityItem(customerid); //el customerid es el mismo valor que se pide para analytics y es el cu de un cliente
+IdentityMap identityMap = new IdentityMap();
+identityMap.addItem(coddoc, "Interbankcoddoc")
+identityMap.addItem(codunicocli, "Interbankcodunicocli")
+Identity.updateIdentities(identityMap);
+
+iOS:
+let coddoc_enc = digitalid.split(separator: "-")[1] // tomamos solo el documento encriptado del digital id
+let identityMap = IdentityMap()
+identityMap.addItem(item: IdentityItem(id: coddoc_enc), withNamespace: "Interbankcoddoc")
+identityMap.addItem(item: IdentityItem(id: customerid), withNamespace: "Interbankcodunicocli") //el customerid es el mismo valor que se pide para analytics y es el cu de un cliente
+Identity.updateIdentities(with: identityMap)

@@ -1,0 +1,261 @@
+{
+    "eventType": "Sample value", 
+    "_id": "Sample value",  
+    "timestamp": "2018-11-12T20:20:39+00:00",                 
+    "_interbank": {
+        "device": {
+            "id": "Sample value", 
+            "os": "Sample value", 
+            "location": {
+                "latitude": "Sample value",
+                "longitude": "Sample value",
+                "accuracy": "Sample value"
+            }
+        },
+        "event": {
+            "application": "Sample value",
+            "name": "Sample value",
+            "code": "Sample value",
+            "section": "Sample value",
+            "subsection": "Sample value",
+            "authenticationfactor": "Sample value",
+            "entrycode": "Sample value",                            
+            "searchquery": "Sample value",
+            "referencecode": "Sample value",
+            "products": {
+                "number" : 1,
+                "list" : "Sample value"    
+            },
+            "security": {
+                "method": "Sample value"
+            },
+            "login": {
+                "entrycode": "Sample value",
+                "isdatareminded": true,
+                "successlogin": true
+            },
+            "product": {
+                "name": "Sample value",
+                "type": "Sample value",
+                "currency": "Sample value"
+            },          
+            "buyFlow": {
+                "isoffer": true,
+                "isview": true,
+                "ispurchasebegin": true,
+                "ispurchase": true
+            },
+            "offering": {
+                "data": "Sample value",
+                "isclick": true,
+                "isview": true
+            },
+            "loyaltyprogram":{
+                "name": "Sample value",
+                "isclaim": true,
+                "prize": "Sample value"
+            },
+            "payment":{                    
+                "id":"Sample value",
+                "charge":"Sample value",
+                "recepient":"Sample value",
+                "currency": "Sample value",
+                "amount": 50.0,
+                "favorite":{
+                    "id": "Sample value",
+                    "beginas": true,
+                    "endas": "Sample value"
+                },
+                "frequent": "Sample value",
+                "exchange": {
+                    "type": "Sample value",
+                    "currency": "Sample value",
+                    "amount": 15.0
+                }
+            },
+            "flow":{
+                "class": "Sample value", 
+                "name": "Sample value",
+                "type": "Sample value",
+                "mode": "Sample value",
+                "detail": "Sample value"
+            },
+            "screendetail":{
+                "messagevalidator": "Sample value",
+                "component":{                        
+                    "type": "Sample value",
+                    "balancedisplay": true
+                }
+            },
+            "externalcampaign": {
+                "name": "Sample value",
+                "source": "Sample value",
+                "deeplink": "Sample value",
+                "ad": "Sample value",
+                "adset": "Sample value",
+                "channel": "Sample value",
+                "isretargeting": true,
+                "reengamentwindow": "Sample value"
+            },
+            "error": {
+                "message": "Sample value",
+                "frontcode": "Sample value"
+            }
+        },
+        "user":{
+            "identities": {
+                "coddoc": "Sample value",
+                "codunicocli": "Sample value",
+                "digitalid": "Sample value",
+                "adverstiserid": "Sample value",
+                "gid": "Sample value",
+                "ecid": "Sample value"
+            },                    
+            "islogged": false,
+            "iscustomer": false,
+            "doctype": "Sample value",
+            "behaviour": {
+                "daysSinceLastVisit": "Sample value",
+                "visitType": "Sample value"
+            },
+            "tenency": ""
+        }
+    },
+    "application": {
+        "closeType":"close",
+        "id":"Sample value",
+        "isClose":false,
+        "isInstall":false,
+        "isLaunch":false,
+        "isUpgrade":false,
+        "name":"Sample value",
+        "sessionLength": 8731,
+        "version": "Sample value",
+        "userPerspective": "foreground"
+    },
+    "environment": {
+        "browserDetails":{
+            "acceptLanguage":"Sample value",
+            "cookiesEnabled":false,
+            "javaEnabled":false,
+            "javaScriptEnabled":false,
+            "javaScriptVersion":"Sample value",
+            "javaVersion":"Sample value",
+            "name":"Sample value",
+            "quicktimeVersion":"Sample value",
+            "thirdPartyCookiesEnabled":false,
+            "userAgent":"Sample value",
+            "userAgentClientHints":{
+                "architecture":"Sample value",
+                "bitness":"Sample value",
+                "brands":[
+                    {
+                        "brand":"Sample value",
+                        "version":"Sample value"
+                    }
+                ],
+                "mobile":false,
+                "model":"Sample value",
+                "platform":"Sample value",
+                "platformVersion":"Sample value",
+                "wow64":false
+            },
+            "vendor":"Sample value",
+            "version":"Sample value",
+            "viewportHeight":6944,
+            "viewportWidth":18269
+        },
+        "_dc": {
+            "language":"en-US"
+        },
+        "carrier":"Sample value",
+        "ISP":"Sample value",
+        "colorDepth":25756,
+        "connectionType":"dialup",
+        "domain":"Sample value",
+        "duration":13532,
+        "ipV4":"69.89.31.226",
+        "ipV6":"2002:4559:1FE2::4559:1FE2",
+        "operatingSystem":"Sample value",
+        "operatingSystemVendor":"Sample value",
+        "operatingSystemVersion":"Sample value",
+        "previousScreen":"Sample value",
+        "type":"browser",
+        "viewedScreen":"Sample value",
+        "viewportHeight":21863,
+        "viewportWidth":8462
+    },
+    "productListItems":[{
+        "SKU":"Sample value",
+        "_id":"/uri-reference",
+        "currencyCode":"USD",
+        "name":"Sample value",
+        "priceTotal":13254.1,
+        "productCategories":[{
+            "categoryID":"Sample value",
+            "categoryName":"Sample value",
+            "categoryPath":"Sample value"
+        }],
+        "selectedOptions":[{
+            "attribute":"Sample value",
+            "value":"Sample value"
+        }]  
+    }],
+    "web": {
+        "webPageDetails": {
+            "pageViews": {
+                "id": "Sample value",
+                "value": 1655.76
+            }, 
+            "isErrorPage": false,
+            "isHomePage": false,
+            "name": "Sample value",
+            "server": "Sample value",
+            "siteSection": "Sample value",
+            "URL": "Sample value",
+            "viewName": "Sample value"                                   
+        },
+        "webReferrer":{
+            "URL":"Sample value",
+            "type":"internal"
+        },
+        "webInteraction": {            
+            "linkClicks": {
+                "id": "Sample value",
+                "value": 28824.87
+            },
+            "name": "Sample value",
+            "region": "Sample value",
+            "type": "download",
+            "URL": "Sample value"
+        }
+    }, 
+    "device": {
+        "colorDepth":21395,
+        "isBackgroundPushEnabled":false,
+        "isLocationEnabled":false,
+        "isPushOptIn":false,
+        "locationPermission":"SYSTEM_LOCATION_DISABLED",
+        "manufacturer":"Sample value",
+        "model":"Sample value",
+        "modelNumber":"Sample value",
+        "screenHeight":8498,
+        "screenOrientation":"portrait",
+        "screenWidth":26547,
+        "type":"mobile",
+        "typeID":"Sample value",
+        "typeIDService":"https://ns.adobe.com/xdm/external/deviceatlas",
+        "_interbank": {
+            "_id": "AAREMRMREIJ3434AKSMDNS2222"
+        }
+    },
+    "identityMap": {
+        "key": [
+            {
+                "authenticatedState": "ambiguous",
+                "id": "Sample value",
+                "primary": false
+            }
+        ]
+    }
+}
