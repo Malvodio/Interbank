@@ -15,12 +15,21 @@
         "event": {
             "application": "Sample value",
             "name": "Sample value",
-            "code": "Sample value",
+            "code": "Sample value", 
             "section": "Sample value",
             "subsection": "Sample value",
             "authenticationfactor": "Sample value",
-            "entrycode": "Sample value",                            
-            "searchquery": "Sample value",
+            "entrycode": "Sample value",
+            "search":{
+                "type": "Sample value",
+                "query": "Sample value",
+                "flights": {
+                    "parameters": "Sample value"
+                }
+            },
+            "implementation":{
+                "project": "Sample value"
+            },
             "referencecode": "Sample value",
             "products": {
                 "number" : 1,
@@ -37,9 +46,23 @@
             "product": {
                 "name": "Sample value",
                 "type": "Sample value",
-                "currency": "Sample value"
-            },          
-            "buyFlow": {
+                "currency": "Sample value",
+                "options": "Sample value"
+            },
+            "order": {
+                "id": "Sample value",
+                "currency": "Sample value",
+                "payment": {
+                    "method": "Sample value",                        
+                    "monetarypricepaid": 50.0,
+                    "nonmonetarypricepaid": 50.0
+                },
+                "shipping": {
+                    "method": "Sample value",
+                    "price": 45.0
+                }
+            },
+            "buyflow": {                
                 "isoffer": true,
                 "isview": true,
                 "ispurchasebegin": true,
@@ -47,6 +70,7 @@
             },
             "offering": {
                 "data": "Sample value",
+                "isimpression": true,
                 "isclick": true,
                 "isview": true
             },
@@ -85,6 +109,10 @@
                 "component":{                        
                     "type": "Sample value",
                     "balancedisplay": true
+                },
+                "displayeditems": "Sample value",
+                "personalization":{                        
+                    "data": "Sample value"
                 }
             },
             "externalcampaign": {
@@ -104,6 +132,7 @@
         },
         "user":{
             "identities": {
+                "doctype": "Sample value",
                 "coddoc": "Sample value",
                 "codunicocli": "Sample value",
                 "digitalid": "Sample value",
@@ -113,12 +142,12 @@
             },                    
             "islogged": false,
             "iscustomer": false,
-            "doctype": "Sample value",
+            "segment": "Sample value",
+            "agegroup": "Sample value",
             "behaviour": {
                 "daysSinceLastVisit": "Sample value",
                 "visitType": "Sample value"
-            },
-            "tenency": ""
+            }
         }
     },
     "application": {

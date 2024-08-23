@@ -102,23 +102,29 @@ iif(
     ,${xdm._interbank.event\.application}
 )
 
-// Product Purchase Begin
+// Buyflow: Product Purchase Begin Flag
 
 iif(
-    ${xdm._interbank.event\.buyflow\.ispurchasebegin} == "true" || ${xdm._interbank.event\.buyflow\.ispurchasebegin} == true || ${xdm._interbank.event\.code} == "product.begin"
+    ${xdm._interbank.event\.buyflow\.ispurchasebegin} == "true" 
+    || ${xdm._interbank.event\.buyflow\.ispurchasebegin} == true 
+    || ${xdm._interbank.event\.code} == "product.begin"
+    || contains_key("xdm.productListItems[0]._experience.analytics.event1to100.event12")
     ,"S"
     ,"N"
 )
 
-// Product Purchase
+// Buyflow: Product Purchase Flag
 
 iif(
-    ${xdm._interbank.event\.buyflow\.ispurchase} == "true" || ${xdm._interbank.event\.buyflow\.ispurchase} == true || ${xdm._interbank.event\.code} == "product.purchase"
+    ${xdm._interbank.event\.buyflow\.ispurchase} == "true" 
+    || ${xdm._interbank.event\.buyflow\.ispurchase} == true 
+    || ${xdm._interbank.event\.code} == "product.purchase"
+    || contains_key("xdm.productListItems[0]._experience.analytics.event1to100.event13")
     ,"S"
     ,"N"
 )
 
-// Product Offer
+// Buyflow: Product Offer Flag
 
 iif(
     ${xdm._interbank.event\.buyflow\.isoffer} == "true" || ${xdm._interbank.event\.buyflow\.isoffer} == true || ${xdm._interbank.event\.code} == "product.offer"
@@ -126,20 +132,23 @@ iif(
     ,"N"
 )
 
-// Product View
+// Buyflow: Product View Flag
 
 iif(
-    ${xdm._interbank.event\.buyflow\.isview} == "true" || ${xdm._interbank.event\.buyflow\.isview} == true || ${xdm._interbank.event\.code} == "product.view"
+    ${xdm._interbank.event\.buyflow\.isview} == "true" 
+    || ${xdm._interbank.event\.buyflow\.isview} == true 
+    || ${xdm._interbank.event\.code} == "product.view"
+    || contains_key("xdm.productListItems[0]._experience.analytics.event1to100.event11")
     ,"S"
     ,"N"
 )
 
-//Product List
+// Buyflow: Product
 
 iif(
-    ${xdm._interbank.event\.products\.list} == null
+    contains_key("xdm.productListItems[0].name")
+    ,${xdm.productListItems[0].name}
     ,"SV"
-    ,${xdm._interbank.event\.products\.list}
 )
 
 //Product Name
