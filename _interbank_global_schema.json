@@ -39,15 +39,22 @@
                 "method": "Sample value"
             },
             "login": {
+                "type": "Sample value",
                 "entrycode": "Sample value",
                 "isdatareminded": true,
                 "successlogin": true
+            },
+            "flights": {
+                "origin": "Sample value",
+                "destination": "Sample value",
+                "departure": "Sample value",
+                "return": "Sample value"
             },
             "product": {
                 "name": "Sample value",
                 "type": "Sample value",
                 "currency": "Sample value",
-                "options": "Sample value"
+                "options": "Sample value"                
             },
             "order": {
                 "id": "Sample value",

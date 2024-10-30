@@ -73,9 +73,9 @@ iif(
 // Application  Version
 
 iif(
-    ${xdm.application.version} == null
+    ${xdm.application.name} == null
     ,"SV"
-    ,${xdm.application.version}
+    ,${xdm.application.name}
 )
 
 // OS Version
