@@ -115,3 +115,90 @@ where
   _experience.journeyOrchestration.stepEvents.exportSegmentID in ('bc2be92d-6f3f-4605-a762-6c629fa107b3','490cde56-2244-4052-a7a3-92425bfba128','9754d811-7607-4d64-8f39-19b8015592bb','8044bbcf-0765-4524-b6f8-88794a41edd2','b6e62f26-183a-4088-94cf-135c64872d07','91310656-5781-4f6c-8eb2-b2dba1d2c19e')
 limit
   100
+
+-- Journey Steps Profile Quantification
+
+with journey_ids_per_audiences as (
+select
+  _experience.journeyOrchestration.stepEvents.journeyVersionID as journeyversionId
+from
+  journey_step_events
+where
+  _experience.journeyOrchestration.stepEvents.exportSegmentID in ('5f398021-446f-4611-998f-aaf8013a632b')
+group by 1
+)
+  select
+  _experience.journeyOrchestration.stepEvents.journeyVersionName,
+  _experience.journeyOrchestration.stepEvents.journeyVersionID,
+  _experience.journeyOrchestration.stepEvents.profileNamespace,
+  _experience.journeyOrchestration.stepEvents.exportSegmentID,
+  split(_experience.journeyOrchestration.stepEvents.nodeName,' - ')[0] as nodeName,
+  split(_experience.journeyOrchestration.stepEvents.nodeName,' - ')[1] as campaign,
+  count(distinct _experience.journeyOrchestration.stepEvents.profileID) as profiles
+from
+  journey_step_events n , journey_ids_per_audiences b
+where 
+  n._experience.journeyOrchestration.stepEvents.journeyVersionID = b.journeyversionId
+  and _experience.journeyOrchestration.stepEvents.journeyVersionName is not null
+  and _experience.journeyOrchestration.stepEvents.profileNamespace is not null
+group BY
+  1, 2, 3, 4, 5, 6
+
+
+-- Journey Steps Profile Deta
+
+with journey_ids_per_audiences as (
+select
+  _experience.journeyOrchestration.stepEvents.journeyVersionID as journeyversionId
+from
+  journey_step_events
+where
+  _experience.journeyOrchestration.stepEvents.exportSegmentID in ('5f398021-446f-4611-998f-aaf8013a632b')
+group by 1
+)
+select
+  _experience.journeyOrchestration.stepEvents.journeyVersionName,
+  _experience.journeyOrchestration.stepEvents.journeyVersionID,
+  _experience.journeyOrchestration.stepEvents.profileNamespace,
+  _experience.journeyOrchestration.stepEvents.exportSegmentID,
+  split(_experience.journeyOrchestration.stepEvents.nodeName,' - ')[0] as nodeName,
+  split(_experience.journeyOrchestration.stepEvents.nodeName,' - ')[1] as campaign,
+  _experience.journeyOrchestration.stepEvents.profileID as coddoc
+from
+  journey_step_events n , journey_ids_per_audiences b
+where 
+  n._experience.journeyOrchestration.stepEvents.journeyVersionID = b.journeyversionId
+  and _experience.journeyOrchestration.stepEvents.journeyVersionName is not null
+  and _experience.journeyOrchestration.stepEvents.profileNamespace is not null
+
+  select count(*)
+from uis_repair_shared_identities
+limit 100
+
+
+select max(timestamp - INTERVAL '5 hour') as time_fixed, count(1) as events
+from ib_rel_digital_channel_benefit
+limit 100
+
+select max(timestamp - INTERVAL '5 hour') as time_fixed, count(1) as events
+from ib_rel_digital_channel_app
+
+
+select max(timestamp - INTERVAL '5 hour') as time_fixed, count(1) as events
+from ib_rel_digital_channel_website
+
+
+select *
+  --timestamp - INTERVAL '5 hour' as time_fixed, _interbank, eventtype, productListItems, environment, application, identityMap, web, eventtype --max(timestamp - INTERVAL '5 hour') as time_fixed, count(1) as events
+from ib_rel_digital_channel_website
+where eventtype in (
+  --'web.webpagedetails.pageViews',
+  'web.webinteraction.linkClicks')
+limit 100
+
+select timestamp - INTERVAL '5 hour' as time_fixed, _interbank, eventtype, productListItems, environment, application, identityMap, web, eventtype --max(timestamp - INTERVAL '5 hour') as time_fixed, count(1) as events
+from ib_rel_digital_channel_app
+where eventtype in (
+  --'web.webpagedetails.pageViews',
+  'web.webinteraction.linkClicks')
+limit 100
